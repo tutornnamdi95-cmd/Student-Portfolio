@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio | Academic Planner</title>
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Semantic Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">StudentHub</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="planner.html" class="active">Academic Planner</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Schedule Architecture -->
+    <main class="planner-container">
+        <section class="planner-intro">
+            <h1>Interactive Academic Planner</h1>
+            <p>Track your assignments, coursework deadlines, and exam preparations in real-time. Entries persist locally inside your browser container.</p>
+        </section>
+
+        <div class="planner-grid">
+            <!-- Left Panel: Interactive Data Entry Form -->
+            <section class="form-panel">
+                <h3>Add New Task</h3>
+                <form id="task-form">
+                    <div class="form-group">
+                        <label for="task-title">Task Title / Assignment Name</label>
+                        <input type="text" id="task-title" placeholder="e.g., Complete CSC 106 Project" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-course">Course Code</label>
+                        <input type="text" id="task-course" placeholder="e.g., CSC 106" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-date">Deadline Target</label>
+                        <input type="date" id="task-date" required>
+                    </div>
+
+                    <button type="submit" class="btn-add">Add to Dashboard</button>
+                </form>
+            </section>
+
+            <!-- Right Panel: Live Dynamic Stream Display -->
+            <section class="display-panel">
+                <div class="display-header">
+                    <h3>Your Academic Schedule</h3>
+                    <button id="clear-all-btn" class="btn-clear">Clear Completed</button>
+                </div>
+                
+                <!-- Dynamic Target Box for DOM Insertion -->
+                <div id="empty-state" class="empty-state">
+                    <p>No active assignments listed. Use the intake form to append target items.</p>
+                </div>
+                
+                <ul id="task-list" class="task-list">
+                    <!-- JavaScript will insert structured items here -->
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer>
+        <p>&copy; 2026 Nnamdi Anyanwu. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Linking Interactive JavaScript Application Logic -->
+    <script src="js/planner.js"></script>
+</body>
+</html>
